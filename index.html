@@ -1,288 +1,566 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta charset="UTF-8">
-  <title>Novo TADS</title>
-  <link rel="icon" type="image/png" href="img/favicon.png" />
+<html>
 
-  <meta name="robots" content="index, follow">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Novo TADS</title>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
 
-  <meta property="og:title" content="Novo TADS" />
-  <meta property="og:url" content="https://novotads.github.io" />
-  <meta property="og:description" content="Proposta de nova ementa ao curso de TADS" />
-  <meta property="og:site_name" content="Novo TADS" />
+    <meta name="robots" content="index, follow">
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta property="og:title" content="Novo TADS" />
+    <meta property="og:url" content="https://novotads.github.io" />
+    <meta property="og:description" content="Proposta de nova ementa ao curso de TADS" />
+    <meta property="og:site_name" content="Novo TADS" />
 
-  <link rel="stylesheet" type="text/css" href="./semantic/reset.css">
-  <link rel="stylesheet" type="text/css" href="./semantic/site.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <link rel="stylesheet" type="text/css" href="./semantic/container.css">
-  <link rel="stylesheet" type="text/css" href="./semantic/grid.css">
-  <link rel="stylesheet" type="text/css" href="./semantic/header.css">
-  <link rel="stylesheet" type="text/css" href="./semantic/image.css">
-  <link rel="stylesheet" type="text/css" href="./semantic/menu.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/reset.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/site.css">
 
-  <link rel="stylesheet" type="text/css" href="./semantic/divider.css">
-  <link rel="stylesheet" type="text/css" href="./semantic/dropdown.css">
-  <link rel="stylesheet" type="text/css" href="./semantic/segment.css">
-  <link rel="stylesheet" type="text/css" href="./semantic/button.css">
-  <link rel="stylesheet" type="text/css" href="./semantic/list.css">
-  <link rel="stylesheet" type="text/css" href="./semantic/icon.css">
-  <link rel="stylesheet" type="text/css" href="./semantic/sidebar.css">
-  <link rel="stylesheet" type="text/css" href="./semantic/transition.css">
-  <link rel="stylesheet" type="text/css" href="./semantic/table.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/container.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/grid.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/header.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/image.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/menu.css">
 
-  <style type="text/css">
+    <link rel="stylesheet" type="text/css" href="./semantic/divider.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/segment.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/button.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/list.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/icon.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/transition.css">
+    <link rel="stylesheet" type="text/css" href="./semantic/table.css">
 
-    .hidden.menu {
-      display: none;
-    }
+    <style type="text/css">
+        .hidden.menu {
+            display: none;
+        }
 
-    .masthead.segment {
-      min-height: 700px;
-      padding: 1em 0em;
-    }
-    .masthead .logo.item img {
-      margin-right: 1em;
-    }
-    .masthead .ui.menu .ui.button {
-      margin-left: 0.5em;
-    }
-    .masthead h1.ui.header {
-      margin-top: 3em;
-      margin-bottom: 0em;
-      font-size: 4em;
-      font-weight: normal;
-    }
-    .masthead h2 {
-      font-size: 1.7em;
-      font-weight: normal;
-    }
+        .masthead.segment {
+            min-height: 700px;
+            padding: 1em 0em;
+        }
 
-    .ui.vertical.stripe {
-      padding: 8em 0em;
-    }
-    .ui.vertical.stripe h3 {
-      font-size: 2em;
-    }
-    .ui.vertical.stripe .button + h3,
-    .ui.vertical.stripe p + h3 {
-      margin-top: 3em;
-    }
-    .ui.vertical.stripe .floated.image {
-      clear: both;
-    }
-    .ui.vertical.stripe p {
-      font-size: 1.33em;
-    }
-    .ui.vertical.stripe .horizontal.divider {
-      margin: 3em 0em;
-    }
+        .masthead .logo.item img {
+            margin-right: 1em;
+        }
 
-    .quote.stripe.segment {
-      padding: 0em;
-    }
-    .quote.stripe.segment .grid .column {
-      padding-top: 5em;
-      padding-bottom: 5em;
-    }
+        .masthead .ui.menu .ui.button {
+            margin-left: 0.5em;
+        }
 
-    .footer.segment {
-      padding: 5em 0em;
-    }
+        .masthead h1.ui.header {
+            margin-top: 3em;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
 
-    .secondary.pointing.menu .toc.item {
-      display: none;
-    }
+        .masthead h2 {
+            font-size: 1.7em;
+            font-weight: normal;
+        }
 
-    @media only screen and (max-width: 700px) {
-      .ui.fixed.menu {
-        display: none !important;
-      }
-      .secondary.pointing.menu .item,
-      .secondary.pointing.menu .menu {
-        display: none;
-      }
-      .secondary.pointing.menu .toc.item {
-        display: block;
-      }
-      .masthead.segment {
-        min-height: 350px;
-      }
-      .masthead h1.ui.header {
-        font-size: 2em;
-        margin-top: 1.5em;
-      }
-      .masthead h2 {
-        margin-top: 0.5em;
-        font-size: 1.5em;
-      }
-    }
+        .ui.vertical.stripe {
+            padding: 8em 0em;
+        }
 
+        .ui.vertical.stripe h3 {
+            font-size: 2em;
+        }
 
-  </style>
+        .ui.vertical.stripe .button+h3,
+        .ui.vertical.stripe p+h3 {
+            margin-top: 3em;
+        }
 
-  <script src="./semantic/jquery.min.js.download"></script>
-  <script src="./semantic/visibility.js.download"></script>
-  <script src="./semantic/sidebar.js.download"></script>
-  <script src="./semantic/transition.js.download"></script>
-  <script>
-  $(document)
-    .ready(function() {
+        .ui.vertical.stripe .floated.image {
+            clear: both;
+        }
 
-      // fix menu when passed
-      $('.masthead')
-        .visibility({
-          once: false,
-          onBottomPassed: function() {
-            $('.fixed.menu').transition('fade in');
-          },
-          onBottomPassedReverse: function() {
-            $('.fixed.menu').transition('fade out');
-          }
-        })
-      ;
+        .ui.vertical.stripe p {
+            font-size: 1.33em;
+        }
 
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
+        .ui.vertical.stripe .horizontal.divider {
+            margin: 3em 0em;
+        }
 
-    })
-  ;
-  </script>
+        .quote.stripe.segment {
+            padding: 0em;
+        }
+
+        .quote.stripe.segment .grid .column {
+            padding-top: 5em;
+            padding-bottom: 5em;
+        }
+
+        .footer.segment {
+            padding: 5em 0em;
+        }
+
+        .secondary.pointing.menu .toc.item {
+            display: none;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .ui.fixed.menu {
+                display: none !important;
+            }
+            .secondary.pointing.menu .item,
+            .secondary.pointing.menu .menu {
+                display: none;
+            }
+            .secondary.pointing.menu .toc.item {
+                display: block;
+            }
+            .masthead.segment {
+                min-height: 350px;
+            }
+            .masthead h1.ui.header {
+                font-size: 2em;
+                margin-top: 1.5em;
+            }
+            .masthead h2 {
+                margin-top: 0.5em;
+                font-size: 1.5em;
+            }
+        }
+        a{
+          color:white;
+        }
+        a:hover{
+          color:#ccc;
+        }
+    </style>
+
+    <script src="./semantic/jquery.min.js.download"></script>
+    <script src="./semantic/visibility.js.download"></script>
+    <script src="./semantic/sidebar.js.download"></script>
+    <script src="./semantic/transition.js.download"></script>
+    <script>
+        $(document)
+            .ready(function() {
+
+                // fix menu when passed
+                $('.masthead')
+                    .visibility({
+                        once: false,
+                        onBottomPassed: function() {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onBottomPassedReverse: function() {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    });
+
+                // create sidebar and attach to menu open
+                $('.ui.sidebar')
+                    .sidebar('attach events', '.toc.item');
+
+            });
+    </script>
 </head>
+
 <body class="pushable">
 
-<!-- Page Contents -->
-<div class="pusher">
-  <div class="ui inverted vertical center aligned segment header">
+    <!-- Page Contents -->
+    <div class="pusher">
+        <div class="ui inverted vertical center aligned segment header">
 
-    <div class="ui text container">
-      <h1>
+            <div class="ui text container">
+                <h1>
         Novo TADS
       </h1>
-      <h2>Nova proposta de ementa ao curso de Análise de Sistemas na Unicamp</h2>
-      <a href="https://www.github.com/novotads" class="ui huge green button" target="blank">
+                <h2>Nova proposta de ementa ao curso de Análise de Sistemas na Unicamp</h2>
+                <a href="https://www.github.com/novotads" class="ui huge green button" target="blank">
         GitHub
       </a>
-    </div>
-  </div>
-
-  <div class="ui vertical stripe container segment">
-    <h2>O que é?</h2>
-    <p>Os cursos de Análise de Sistemas e Sistemas da Informação estão em processo
-    de atualização de ementa na FT - Unicamp, por meio deste projeto será possível
-    mostrar a opinião dos alunos sobre o curso e o que eles querem de mudanças na grade.</p>
-    <p>Nesta página será tratado apenas o curso de análise de sistmas no momento,
-    sendo que o curso na FT pode ter ser projeto pedagógico lido
-    <a href="http://www.ft.unicamp.br/sites/default/files/graduacao/ProjetoPedagogicoTADS2012.pdf", target='_blank'>aqui</a>.
-    Neste projeto vamos iniciar colocando a proposta de curso atual abaixo, tudo nesta
-    página possui código aberto e pode ser editado em <a href="https://github.com/novotads/novotads.github.io">https://github.com/novotads/novotads.github.io</a>.
-    É importante a participação de todos nós alunos nesse projeto, pois embora nós não venhamos
-    a ter nossa grade modificada, somos os maiores especialistas nos problemas dela.</p>
-    <p>Para poder ajudar na edição desta página crie um issue com seu github pessoal. Suas sugestões são
-    bem-vindas e você será adicionado como colaborador assim que seu issue for visto pela moderação.</p>
-  </div>
-
-  <div class="ui vertical stripe container segment">
-    <h2>Grade</h2>
-    <p>As disciplinas do curso estarão listadas abaixo. Em preto ficam as que não
-      vieram sofrer modificação, em azul as que vieram a sofrer, em verde as que
-      se tornaram obrigatórias e em vermelho as que deixam de ser obrigatórias.
-    </p>
-
-    <table class="ui inverted table">
-    <thead><tr><th>1o. semestre</th><th>20 créditos</th></tr></thead>
-    <tbody>
-      <tr class="ui inverted table"><td>SI 100 | Programação I</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 221 | GA e Álgebra Linear</td><td>6 créditos</td></tr>
-      <tr class="ui inverted table"><td>TT 106 | Organização e Arquitetura de Computadores</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>TT 120 | Cálculo I</td><td>6 créditos</td></tr>
-    </tbody>
-    <thead><tr><th>2o. semestre</th><th>22 créditos</th></tr></thead>
-    <tbody>
-      <tr class="ui inverted table"><td>SI 102 | Seminários I</td><td>2 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 200 | Programação II</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 201 | Estrutura de Dados I</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 202 | Resolução de Problemas</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>ST 008 | Metodologia do Trabalho Científico</td><td>2 créditos</td></tr>
-      <tr class="ui inverted table"><td>ST 266 | Engenharia de Software I</td><td>2 créditos</td></tr>
-      <tr class="ui inverted table"><td>TT 304 | Organização e Arquitetura de Computadores</td><td>4 créditos</td></tr>
-    </tbody>
-    <thead><tr><th>3o. semestre</th><th>22 créditos</th></tr></thead>
-    <tbody>
-      <tr class="ui inverted table"><td>SI 010 | Estrutura de Dados II</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 300 | Orientada a Objetos I</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 304 | Engenharia de Software II</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 404 | Interfaces Humano-Computador</td><td>2 créditos</td></tr>
-      <tr class="ui inverted table"><td>ST 567 | Banco de dados I</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>TT 350 | Administração de Empresas</td><td>4 créditos</td></tr>
-    </tbody>
-    <thead><tr><th>4o. semestre</th><th>28 créditos</th></tr></thead>
-    <tbody>
-      <tr class="ui inverted table"><td>Eletivas do Bloco I</td><td>10 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 305 | Análise de Sistemas de Informação I</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 400 | Orientada a Objetos II</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>ST 096 | Ciência, Tecnologia e Sociedade</td><td>2 créditos</td></tr>
-      <tr class="ui inverted table"><td>ST 562 | Estruturas de Arquivos</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>ST 767 | Banco de Dados II</td><td>4 créditos</td></tr>
-    </tbody>
-    <thead><tr><th>5o. semestre</th><th>28 créditos</th></tr></thead>
-    <tbody>
-      <tr class="ui inverted table"><td>Eletivas do Bloco I</td><td>10 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 405 | Análise de Sistemas de Informação II</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 703 | Governança e Planejamento Estratégico de TI</td><td>2 créditos</td></tr>
-      <tr class="ui inverted table"><td>ST 568 | Redes de Comunicação I</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>ST 765 | Computação Gráfica</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>TT 060 | Gestão de Projetos</td><td>4 créditos</td></tr>
-    </tbody>
-    <thead><tr><th>6o. semestre</th><th>24 créditos</th></tr></thead>
-    <tbody>
-      <tr class="ui inverted table"><td>Eletivas do Bloco II</td><td>2 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 401 | Programação Web</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 700 | Programação Mobile</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 800 | Empreendedorismo e Inovação</td><td>2 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 912 | TCC I</td><td>6 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 914 | Estágio I</td><td>6 créditos</td></tr>
-    </tbody>
-    <thead><tr><th>7o. semestre</th><th>18 créditos</th></tr></thead>
-    <tbody>
-      <tr class="ui inverted table"><td>Eletivas do Bloco II</td><td>4 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 704 | Seminários II</td><td>2 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 913 | TCC II</td><td>6 créditos</td></tr>
-      <tr class="ui inverted table"><td>SI 915 | Estágio II</td><td>6 créditos</td></tr>
-    </tbody>
-
-  </table>
-
-  </div>
-
-  <div class="ui vertical stripe container segment">
-    <h2>Disciplinas</h2>
-    <p>Disciplinas que estarão no Novo TADS e suas ementas.</p>
-  </div>
-
-  <div class="ui inverted vertical footer segment">
-    <div class="ui container">
-      <div class="ui stackable inverted divided equal height stackable grid">
-        <div class="seven wide column">
-          <h4 class="ui inverted header">Redes Sociais</h4>
-          <div class="ui inverted link list">
-            <a href="https://github.com/novotads" target="_blank" class="item">GitHub</a>
-          </div>
+            </div>
         </div>
-        <div class="seven wide column">
-          <h4 class="ui inverted header">©2017</h4>
-          <p>Alunos da Faculdade de Tecnologia</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</body></html>
 
-<script>
-$('#example1').progress();
-</script>
+        <div class="ui vertical stripe container segment">
+            <h2>O que é?</h2>
+            <p>Os cursos de Análise de Sistemas e Sistemas da Informação estão em processo de atualização de ementa na FT - Unicamp, por meio deste projeto será possível mostrar a opinião dos alunos sobre o curso e o que eles querem de mudanças na grade.</p>
+            <p>Nesta página será tratado apenas o curso de análise de sistmas no momento, sendo que o curso na FT pode ter ser projeto pedagógico lido
+                <a href="http://www.ft.unicamp.br/sites/default/files/graduacao/ProjetoPedagogicoTADS2012.pdf" , target="_blank">aqui</a>. Neste projeto vamos iniciar colocando a proposta de curso atual abaixo, tudo nesta página possui código aberto e
+                pode ser editado em <a href="https://github.com/novotads/novotads.github.io">https://github.com/novotads/novotads.github.io</a>. É importante a participação de todos nós alunos nesse projeto, pois embora nós não venhamos a ter nossa grade
+                modificada, somos os maiores especialistas nos problemas dela.</p>
+            <p>Para poder ajudar na edição desta página crie um issue com seu github pessoal. Suas sugestões são bem-vindas e você será adicionado como colaborador assim que seu issue for visto pela moderação.</p>
+        </div>
+
+        <div class="ui vertical stripe container segment">
+            <h2>Grade</h2>
+            <p>As disciplinas do curso estarão listadas abaixo. Em preto ficam as que não vieram sofrer modificação, em azul as que vieram a sofrer, em verde as que se tornaram obrigatórias e em vermelho as que deixam de ser obrigatórias.
+            </p>
+
+            <table class="ui inverted table">
+                <thead>
+                    <tr>
+                        <th>1o. semestre</th>
+                        <th>20 créditos</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="ui inverted green table">
+                        <td><a href="#SI001">SI 001 | Programação I</a></td>
+                        <td>6 créditos</td>
+                        <td>Criada para aumentar os créditos no 1o. semestre e atualizar conteúdo. Equivale SI 100</td>
+                    </tr>
+                    <tr class="ui inverted blue table">
+                        <td><a href="#ST567">ST 567 | Banco de dados I</a></td>
+                        <td>4 créditos</td>
+                        <td>Alterado o semestre sugerido para cursar sem alteração no oferecimento</td>
+                    </tr>
+                    <tr class="ui inverted blue table">
+                        <td><a href="#ST567">TT 350 | Administração de Empresas</a></td>
+                        <td>4 créditos</td>
+                        <td>Alterado o semestre sugerido para cursar sem alteração no oferecimento</td>
+                    </tr>
+                    <tr class="ui inverted blue table">
+                        <td><a href="#ST008">ST 008 | Metodologia do Trabalho Científico</a></td>
+                        <td>2 créditos</td>
+                        <td>Alterado o semestre sugerido para cursar e o semestre de oferecimento</td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td><a href="#TT106">TT 106 | Organização e Arquitetura de Computadores</a></td>
+                        <td>4 créditos</td>
+                        <td>Não será alterada</td>
+                    </tr>
+                    <tr class="ui inverted red table">
+                        <td>TT 120 | Cálculo I</td>
+                        <td>6 créditos</td>
+                        <td>Removida por incorência de foco</td>
+                    </tr>
+                    <tr class="ui inverted red table">
+                        <td>SI 100 | Programação I</td>
+                        <td>4 créditos</td>
+                        <td>Removida da ementa para se atualizar conteúdo, equivale a SI 001</td>
+                    </tr>
+                    <tr class="ui inverted red table">
+                        <td>SI 221 | GA e Álgebra Linear</td>
+                        <td>6 créditos</td>
+                        <td>Removida por incorência de foco</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>2o. semestre</th>
+                        <th>22 créditos</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="ui inverted table">
+                        <td>SI 102 | Seminários I</td>
+                        <td>2 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 200 | Programação II</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 201 | Estrutura de Dados I</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 202 | Resolução de Problemas</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>ST 266 | Engenharia de Software I</td>
+                        <td>2 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>TT 304 | Organização e Arquitetura de Computadores</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>3o. semestre</th>
+                        <th>22 créditos</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="ui inverted table">
+                        <td>SI 010 | Estrutura de Dados II</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 300 | Orientada a Objetos I</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 304 | Engenharia de Software II</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 404 | Interfaces Humano-Computador</td>
+                        <td>2 créditos</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>4o. semestre</th>
+                        <th>28 créditos</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="ui inverted table">
+                        <td>Eletivas do Bloco I</td>
+                        <td>10 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 305 | Análise de Sistemas de Informação I</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 400 | Orientada a Objetos II</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>ST 096 | Ciência, Tecnologia e Sociedade</td>
+                        <td>2 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>ST 562 | Estruturas de Arquivos</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>ST 767 | Banco de Dados II</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>5o. semestre</th>
+                        <th>28 créditos</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="ui inverted table">
+                        <td>Eletivas do Bloco I</td>
+                        <td>10 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 405 | Análise de Sistemas de Informação II</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 703 | Governança e Planejamento Estratégico de TI</td>
+                        <td>2 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>ST 568 | Redes de Comunicação I</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>ST 765 | Computação Gráfica</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>TT 060 | Gestão de Projetos</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>6o. semestre</th>
+                        <th>24 créditos</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="ui inverted table">
+                        <td>Eletivas do Bloco II</td>
+                        <td>2 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 401 | Programação Web</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 700 | Programação Mobile</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 800 | Empreendedorismo e Inovação</td>
+                        <td>2 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 912 | TCC I</td>
+                        <td>6 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 914 | Estágio I</td>
+                        <td>6 créditos</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <th>7o. semestre</th>
+                    <th>18 créditos</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr class="ui inverted table">
+                        <td>Eletivas do Bloco II</td>
+                        <td>4 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 704 | Seminários II</td>
+                        <td>2 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 913 | TCC II</td>
+                        <td>6 créditos</td>
+                        <td></td>
+                    </tr>
+                    <tr class="ui inverted table">
+                        <td>SI 915 | Estágio II</td>
+                        <td>6 créditos</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="ui vertical stripe container segment">
+            <h2>Disciplinas</h2>
+            <p>Disciplinas que estarão no Novo TADS e suas ementas.</p>
+
+            <table id="SI001" class="ui inverted green table">
+                <thead>
+                    <tr>
+                        <th>SI 001 | Programação I</th>
+                        <th>6 créditos</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Algoritmos: representações e técnicas de construção. Estrutura de dados e de controle de programas. Introdução a uma linguagem de programação de alto nível. Modularização em linguagem de programação. Recursividade. Implementação de programas. Alocação dinâmica.</td>
+                    </tr>
+                </tbody>
+              </table>
+              <table id="ST567" class="ui inverted blue table">
+                  <thead>
+                      <tr>
+                          <th>ST 567 | Banco de Dados I</th>
+                          <th>4 créditos</th>
+                          <th></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Fundamentos de sistemas de bancos de dados e conceitos relacionados com a estrutura conceitual e lógica dos bancos de dados. Modelos de dados e sua aplicação no desenvolvimento de projetos de bancos de dados. Introdução a Sistemas de Gerenciamento de Banco de Dados.</td>
+                      </tr>
+                  </tbody>
+                </table>
+
+                <table id="TT350" class="ui inverted blue table">
+                    <thead>
+                        <tr>
+                            <th>TT 350 | Administração de empresas</th>
+                            <th>4 créditos</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Evolução do pensamento em administração. Tendências contemporâneas em administração. Processo decisório e estratégia corporativa. Organizações que aprendem. Processos de controle. Administração de marketing. Estrutura do capital. Participação nos lucros e distribuição de dividendos.</td>
+                        </tr>
+                    </tbody>
+                  </table>
+
+              <table id="TT106" class="ui inverted table">
+                  <thead>
+                      <tr>
+                          <th>TT 106 | Organização e Arquitetura de Computadores</th>
+                          <th>4 créditos</th>
+                          <th></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td> Histórico do computador. Álgebra Booleana. Funções Lógicas e Circuitos Combinacionais. Memórias, unidades centrais de processamento. Endereçamento, barramento, interrupção, comunicações, interfaces e periféricos. Computadores típicos. Implementação de uma CPU. Noções de programação em linguagem assembly.</td>
+                      </tr>
+                  </tbody>
+                </table>
+                <table id="ST008" class="ui inverted table">
+                    <thead>
+                        <tr>
+                            <th>ST 008 | Metodologia do Trabalho Científico</th>
+                            <th>2 créditos</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> Método científico: conceitos e histórico; métodos e técnicas de pesquisa; Pesquisa: conceitos, definições e tipos; elaboração, comunicação e divulgação da pesquisa: fases da elaboração da pesquisa, comunicação da pesquisa (estrutura, forma e conteúdo); normas ABNT; linguagem científica; monografias; dissertações; teses, relatórios técnicos; artigos; eventos científicos.</td>
+                        </tr>
+                    </tbody>
+                  </table>
+              </div>
+
+                    <div class="ui inverted vertical footer segment">
+                        <div class="ui container">
+                            <div class="ui stackable inverted divided equal height stackable grid">
+                                <div class="seven wide column">
+                                    <h4 class="ui inverted header">Redes Sociais</h4>
+                                    <div class="ui inverted link list">
+                                        <a href="https://github.com/novotads" target="_blank" class="item">GitHub</a>
+                                    </div>
+                                </div>
+                                <div class="seven wide column">
+                                    <h4 class="ui inverted header">©2017</h4>
+                                    <p>Alunos da Faculdade de Tecnologia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+</body>
+
+</html>
